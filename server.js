@@ -67,7 +67,7 @@ app.get('/', function(req, res){
 	}else{
 		res.send(`
 			<b>api call</b><br>
-			<a href="?q=your-text-here">http://${req.get('host')}?q=searchTerm</a><br><br>
+			<a href="?q=dog%20food">${online ? 'https':'http'}://${req.get('host')}?q=searchTerm</a><br><br>
 			
 			<b>extra options</b> <br>
 			&qcount=50 // products count<br>
@@ -76,11 +76,11 @@ app.get('/', function(req, res){
 			&rmax=5 // max-rating<br><br>
 
 			<b>example</b><br>
-			<a href="http://${req.get('host')}?q=battery&rcount=100&rmax=2" target="_blank">http://${req.get('host')}?q=battery&rcount=100&rmax=2</a><br><br>
+			<a href="${online ? 'https':'http'}://${req.get('host')}?q=battery&rcount=30&rmax=3" target="_blank">${online ? 'https':'http'}://${req.get('host')}?q=battery&rcount=30&rmax=3</a><br><br>
 
 			<br><br>
 			<b>source code</b><br>
-			<a href="">github</a>
+			<a href="https://github.com/ffd8/amazon-pal">github</a>
 		`);
 	}
 });
